@@ -37,32 +37,33 @@
   --waline-avatar-radius: 50%;
   --waline-box-shadow: none;
 
-.cmt-body.waline
-  ondark()
-    --waline-white: #000;
-    --waline-light-grey: #666;
-    --waline-dark-grey: #999;
-    /* 布局颜色 */
-
-    --waline-color: #fff;
-    --waline-bgcolor: var(--block);
-    --waline-bgcolor-light: #272727;
-    --waline-border-color: #333;
-    --waline-disable-bgcolor: #444;
-    --waline-disable-color: #272727;
-    /* 特殊颜色 */
-    --waline-bq-color: #272727;
-    /* 其他颜色 */
-    --waline-info-bgcolor: #272727;
-    --waline-info-color: #666;
-    .wl-count
-      padding: .375em;
-      font-weight: bold;
-      font-size: 1.25em;
-      color: #fff;
-
-  :root[data-theme="dark"] &
-    ondark()
-  :root:not([data-theme]) &
-    @media (prefers-color-scheme: dark)
-      ondark()
+// 当前 Stellar 的夜间模式不适配 waline, 暂时注释掉
+//.cmt-body.waline
+//  ondark()
+//    --waline-white: #000;
+//    --waline-light-grey: #666;
+//    --waline-dark-grey: #999;
+//    /* 布局颜色 */
+//
+//    --waline-color: #ff;
+//    --waline-bgcolor: var(--block);
+//    --waline-bgcolor-light: #272727;
+//    --waline-border-color: #333;
+//    --waline-disable-bgcolor: #444;
+//    --waline-disable-color: #272727;
+//    /* 特殊颜色 */
+//    --waline-bq-color: #272727;
+//    /* 其他颜色 */
+//    --waline-info-bgcolor: #272727;
+//    --waline-info-color: #666;
+//    .wl-count
+//      padding: .375em;
+//      font-weight: bold;
+//      font-size: 1.25em;
+//      color: #fff;
+//
+//  :root[data-theme="dark"] &
+//    ondark()
+//  :root:not([data-theme]) &
+//    @media (prefers-color-scheme: dark)
+//      ondark()
