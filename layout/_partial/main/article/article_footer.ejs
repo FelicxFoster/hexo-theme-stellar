@@ -146,6 +146,48 @@ function layoutDiv() {
     `
   }
 
+  if (theme.article.donate) {
+    const donateImage = () => {
+      if (theme.article.donate.wechat) {
+        return `
+        <div class="donate-image" id="donate-wechat" style="display:none; position:absolute; z-index:1000; transform: translateY(-100%); left: 50%; transform: translateX(-50%) translateY(-100%);">
+          <img src="${theme.article.donate.wechat}" alt="Donate with WeChat" style="width: 150px; height: auto;" />
+        </div>
+        `;
+      } else {
+        return '';
+      }
+    };
+
+    el += `
+    <section id="donate">
+      <div class="header"><span>${__('meta.donate')}</span></div>
+      <div class="body">
+        <p>${__('请作者喝杯咖啡吧')}
+          <span class="donate-icon" onmouseover="showElement('donate-wechat')" onmouseout="hideElement('donate-wechat')" style="display: inline-block;">
+            <i class="fa-solid fa-gift" style="font-size: 20px;"></i>
+          </span>
+        </p>
+        ${donateImage()}
+      </div>
+    </section>
+    `;
+
+    el += `
+    <script>
+      const showElement = (id) => {
+        const element = document.getElementById(id);
+        element.style.display = 'block';
+      };
+
+      const hideElement = (id) => {
+        const element = document.getElementById(id);
+        element.style.display = 'none';
+      };
+    </script>
+    `;
+  }
+
   el += '</div>';
   return el;
 }
