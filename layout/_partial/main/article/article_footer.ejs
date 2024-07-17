@@ -164,8 +164,8 @@ function layoutDiv() {
       <div class="header"><span>${__('meta.donate')}</span></div>
       <div class="body">
         <p>${__('请作者喝杯咖啡吧')}
-          <span class="donate-icon" onmouseover="showElement('donate-wechat')" onmouseout="hideElement('donate-wechat')" style="display: inline-block;">
-            <i class="fa-solid fa-gift" style="font-size: 20px;"></i>
+          <span class="donate-icon" onclick="toggleElement('donate-wechat')" style="display: inline-block;">
+            <i class="fa-solid fa-gift fa-flip" style="font-size: 20px;"></i>
           </span>
         </p>
         ${donateImage()}
@@ -175,14 +175,13 @@ function layoutDiv() {
 
     el += `
     <script>
-      const showElement = (id) => {
+      const toggleElement = (id) => {
         const element = document.getElementById(id);
-        element.style.display = 'block';
-      };
-
-      const hideElement = (id) => {
-        const element = document.getElementById(id);
-        element.style.display = 'none';
+        if (element.style.display === 'none' || element.style.display === '') {
+          element.style.display = 'block';
+        } else {
+          element.style.display = 'none';
+        }
       };
     </script>
     `;
