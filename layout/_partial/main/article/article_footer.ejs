@@ -164,7 +164,7 @@ function layoutDiv() {
       <div class="header"><span>${__('meta.donate')}</span></div>
       <div class="body">
         <p>${__('请作者喝杯咖啡吧')}
-          <span class="donate-icon" onclick="toggleElement('donate-wechat')" style="display: inline-block;">
+          <span class="donate-icon" onclick="showQRCode()" style="display: inline-block;">
             <i class="fa-solid fa-gift fa-flip" style="font-size: 20px;"></i>
           </span>
         </p>
@@ -175,12 +175,24 @@ function layoutDiv() {
 
     el += `
     <script>
-      const toggleElement = (id) => {
-        const element = document.getElementById(id);
-        if (element.style.display === 'none' || element.style.display === '') {
-          element.style.display = 'block';
-        } else {
-          element.style.display = 'none';
+      const showQRCode = () => {
+        const qrCode = document.getElementById('donate-wechat');
+        qrCode.style.display = 'block';
+
+        // 添加一个事件监听器来隐藏二维码
+        document.addEventListener('click', hideQRCode);
+      };
+
+      const hideQRCode = (event) => {
+        const qrCode = document.getElementById('donate-wechat');
+        const donateIcon = document.querySelector('.donate-icon');
+
+        // 检查点击的是否是二维码或捐赠图标
+        if (!qrCode.contains(event.target) && !donateIcon.contains(event.target)) {
+          qrCode.style.display = 'none';
+
+          // 移除事件监听器
+          document.removeEventListener('click', hideQRCode);
         }
       };
     </script>

@@ -20,10 +20,16 @@ welcome:
   layout: markdown
   title: 🎉欢迎
   content: |
-    本站托管于Vercel, 加载缓慢请耐心等待，欢迎大家畅所欲言。
-    <hr style="border: 1px solid black; background-color: black;">
-    <span id="hitokoto"></span>
     <script src="https://v1.hitokoto.cn/?/?c=b&encode=js&select=%23hitokoto" defer></script>
+    <span id="hitokoto"></span>
+    <hr style="border: 1px solid black; background-color: black;">
+    本站托管于Vercel, 加载缓慢请耐心等待，欢迎大家评论区交流～
+  linklist:
+    columns: 1
+    items:
+      - icon: default:tocomment
+        title: 立即前往
+        url: '/friends/#comments'
 
 # Recent update
 recent:
