@@ -104,7 +104,7 @@ memos-du:
 # 最新评论
 new-comment:
   layout: timeline
-  title: 最新评论
+  title: 🔊最新评论
   api: https://comment.felicx.eu.org # 此处为 Waline 函数，末尾不要加 /
   type: waline
   limit: 16 # 限制获取数量，默认为 10
