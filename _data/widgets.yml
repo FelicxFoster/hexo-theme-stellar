@@ -93,7 +93,15 @@ tagtree:
   expand_active: true # 是否展开当前节点
   show_tagcon: true # 是否显示标签 icon
 
-# 哔哔
+# github 哔哔
+memos-github:
+  layout: timeline
+  title: 🥂哔哔广场
+  api: https://api.github.com/repos/FelicxFoster/blog-timeline/issues?direction=asc
+  # type: memos
+  hide: user,footer
+
+# memos 哔哔
 memos-du:
   layout: timeline
   title: 🥂哔哔广场
