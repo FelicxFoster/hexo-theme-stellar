@@ -97,7 +97,7 @@ tagtree:
 memos-github:
   layout: timeline
   title: 🥂哔哔广场
-  api: https://api.github.com/repos/FelicxFoster/blog-timeline/issues?direction=asc
+  api: https://api.github.com/repos/FelicxFoster/blog-timeline/issues?direction=desc&per_page=4
   # type: memos
   hide: user,footer
 
@@ -115,4 +115,4 @@ new-comment:
   title: 🔊最新评论
   api: https://comment.felicx.eu.org # 此处为 Waline 函数，末尾不要加 /
   type: waline
-  limit: 16 # 限制获取数量，默认为 10
+  limit: 4 # 限制获取数量，默认为 10
