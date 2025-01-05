@@ -80,7 +80,7 @@ function layoutDiv() {
     el += `
       </div> <!-- End of #content -->
       <script>
-        const correctPassword = process.env.HEXO_ENCRYPT_PASSWORD; // 从环境变量中获取密码
+        const correctPassword = HEXO_ENCRYPT_PASSWORD; // 从环境变量中获取密码
         const form = document.getElementById('passwordForm');
         const passwordInput = document.getElementById('passwordInput');
         const content = document.getElementById('content');
